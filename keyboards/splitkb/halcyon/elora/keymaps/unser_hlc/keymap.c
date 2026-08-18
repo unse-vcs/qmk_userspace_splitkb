@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ESC,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, KC_CAPS, TO_MAC, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, QK_CAPS_WORD_TOGGLE, TO_MAC, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
                                       WIN_NAVNUM, WIN_SPEC, KC_LGUI, KC_LALT, KC_SPC, KC_SPC, KC_RALT, KC_RGUI, KC_APP, KC_ENT
     ),
 
@@ -45,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ESC,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
         KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, KC_CAPS, TO_WIN, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, QK_CAPS_WORD_TOGGLE, TO_WIN, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
                                       MAC_NAVNUM, MAC_SPEC, KC_LGUI, KC_LALT, KC_SPC, KC_SPC, KC_RALT, KC_RGUI, KC_APP, KC_ENT
     ),
 
@@ -65,3 +65,56 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 };
+
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index != 1) {
+        return false;
+    }
+
+    uint8_t mods = get_mods() | get_oneshot_mods();
+    switch (get_highest_layer(layer_state | default_layer_state)) {
+        case LAYER_WIN_BASE:
+        case LAYER_MAC_BASE:
+            tap_code(clockwise ? KC_VOLU : KC_VOLD);
+            break;
+
+        case LAYER_WIN_NAVNUM:
+        case LAYER_WIN_SPEC:
+        case LAYER_MAC_NAVNUM:
+        case LAYER_MAC_SPEC:
+            if (mods & MOD_MASK_SHIFT) {
+                tap_code(clockwise ? KC_WH_R : KC_WH_L);
+            } else {
+                tap_code(clockwise ? KC_WH_D : KC_WH_U);
+            }
+            break;
+    }
+
+    return false;
+}
+
+#ifdef KEY_OVERRIDE_ENABLE
+const key_override_t delete_key_override = ko_make_with_layers_negmods_and_options(
+    MOD_MASK_SHIFT,
+    KC_BSPC,
+    KC_DEL,
+    ~0,
+    MOD_MASK_GUI,
+    ko_option_no_reregister_trigger
+);
+
+const key_override_t delete_word_key_override = ko_make_with_layers_negmods_and_options(
+    MOD_MASK_SHIFT | MOD_MASK_ALT,
+    KC_BSPC,
+    KC_DEL,
+    ~0,
+    MOD_MASK_GUI,
+    ko_option_no_reregister_trigger
+);
+
+const key_override_t *key_overrides[] = {
+    &delete_key_override,
+    &delete_word_key_override,
+    NULL,
+};
+#endif
