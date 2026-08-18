@@ -440,6 +440,22 @@
                 "HLC_NONE": "1",
                 "TARGET": "splitkb_aurora_helix_rev1_vial_hlc"
             }
+        ],
+        [
+            "splitkb/halcyon/elora/rev2",
+            "unser_hlc",
+            {
+                "HLC_ENCODER_REV2": "1",
+                "TARGET": "splitkb_halcyon_elora_rev2_unser_hlc_encoder_rev2"
+            }
+        ],
+        [
+            "splitkb/halcyon/elora/rev2",
+            "unser_hlc",
+            {
+                "HLC_CIRQUE_TRACKPAD": "1",
+                "TARGET": "splitkb_halcyon_elora_rev2_unser_hlc_cirque_trackpad"
+            }
         ]
     ]
 }
