@@ -72,11 +72,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         _______, _______, _______, _______, _______, _______,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        _______, _______, _______, _______,
+        _______, _______, KC_0,    KC_7,
         // Fourth row: right six regular keys
-        KC_0,    KC_7,    KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
+        KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     // Windows: symbols and shifted punctuation.
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     // macOS: German base layout.
@@ -126,11 +126,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         _______, _______, _______, _______, _______, _______,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        _______, _______, _______, _______,
+        _______, _______, KC_0,    KC_7,
         // Fourth row: right six regular keys
-        KC_0,    KC_7,    KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
+        KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 
     // macOS: symbols and shifted punctuation.
@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
 };
 // clang-format on
