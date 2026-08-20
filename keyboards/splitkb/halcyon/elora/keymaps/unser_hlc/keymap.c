@@ -54,11 +54,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        QK_RGB_MATRIX_MODE_PREVIOUS, QK_RGB_MATRIX_MODE_NEXT, QK_RGB_MATRIX_TOGGLE, KC_VOLU,
+        QK_RGB_MATRIX_TOGGLE, QK_RGB_MATRIX_MODE_NEXT, XXXXXXX, XXXXXXX,
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  KC_ENT,  KC_ENT,  KC_SPC,  KC_BSPC, KC_LALT, KC_RGUI
+                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  LT(LAYER_WIN_NAVNUM, KC_ENT),  TT(LAYER_WIN_NAVNUM),  TT(LAYER_WIN_SPEC),  KC_BSPC, KC_LALT, KC_RGUI
     ),
 
     // Windows: navigation, editing, numpad, and media.
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         // Fourth row: right six regular keys
-        DE_SLSH, DE_BSLS, XXXXXXX, XXXXXXX, XXXXXXX, _______,
+        DE_QUOT, DE_SLSH, DE_BSLS, DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
