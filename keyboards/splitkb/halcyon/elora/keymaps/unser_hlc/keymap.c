@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "keymap_german.h"
 
 // -----------------------------------------------------------------------------
 // Layers and aliases
@@ -23,26 +24,19 @@ enum layer_names {
 // -----------------------------------------------------------------------------
 // Physical Elora map
 //
-// The five physical rows are, from top to bottom:
-//   number row, QWERTY row, home row, lower/inner row, thumb row.
+// QMK programs this layout in eight groups, in exactly this order:
 //
-// The lower/inner row contains eight regular keys per half. L19/R19 are the
-// center-most regular keys; L27/R27 are the center-most thumb keys.
+//   Group 1: matrix row 0, left half, columns 6 -> 1
+//   Group 2: matrix row 5, right half, columns 1 -> 6
+//   Group 3: matrix row 1, left half, columns 6 -> 1
+//   Group 4: matrix row 6, right half, columns 1 -> 6
+//   Group 5: matrix row 2, left half, columns 6 -> 1
+//   Group 6: matrix row 7, right half, columns 1 -> 6
+//   Group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+//   Group 8: row 4 columns 4,2,1,5,0, then row 9 columns 0,5,1,2,4
 //
-// NUMBER ROW
-// L06 L05 L04 L03 L02 L01       R01 R02 R03 R04 R05 R06
-//
-// QWERTY ROW
-// L12 L11 L10 L09 L08 L07       R07 R08 R09 R10 R11 R12
-//
-// HOME ROW
-// L18 L17 L16 L15 L14 L13       R13 R14 R15 R16 R17 R18
-//
-// LOWER / INNER ROW (regular keys, not thumbs)
-// L26 L25 L24 L23 L22 L21 L20 L19 R19 R20 R21 R22 R23 R24 R26 R27
-//
-// THUMB ROW (five keys per half)
-//                 L31 L30 L29 L28 L27 R27 R28 R29 R30 R31
+// The comments inside each layer follow these QMK groups. They do not rename
+// groups as rows, thumbs, or other product-level categories.
 // -----------------------------------------------------------------------------
 
 // Keep the physical layout visually aligned with the map above. The QMK
@@ -51,85 +45,103 @@ enum layer_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Windows: normal typing and OS switching.
     [LAYER_WIN_BASE] = LAYOUT(
-        // number row
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ESC,
-        // QWERTY row
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        // home row
-        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        // lower / inner row: eight regular keys per half
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, QK_CAPS_WORD_TOGGLE, TO_MAC, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-        // thumb row: five keys per half
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
+        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
+        KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        DE_UDIA, QK_CAPS_WORD_TOGGLE, TO_MAC, DE_PLUS,
+        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RSFT,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       WIN_NAVNUM, WIN_SPEC, KC_LGUI, KC_LALT, KC_SPC,  KC_SPC,  KC_RALT, KC_RGUI, KC_APP,  KC_ENT
     ),
 
     // Windows: navigation, editing, numpad, and media.
     [LAYER_WIN_NAVNUM] = LAYOUT(
-        // number row
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-        // QWERTY row
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_TAB,  KC_DEL,                         KC_KP_MINUS, KC_1, KC_2, KC_3, KC_KP_COMMA, KC_KP_SLASH,
-        // home row
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
         KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_LCTL, KC_LSFT,                         KC_KP_PLUS,  KC_4, KC_5, KC_6, KC_KP_DOT,   KC_KP_ASTERISK,
-        // lower / inner row
-        _______, _______, _______, _______, _______, _______, _______, _______,       KC_0, KC_7, KC_8, KC_9, KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
-        // thumb row
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        _______, _______, _______, _______, _______, _______,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        _______, _______, _______, _______,
+        KC_0,    KC_7,    KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ),
 
     // Windows: symbols and shifted punctuation.
     [LAYER_WIN_SPEC] = LAYOUT(
-        // number row
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-        // QWERTY row
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-        // home row
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
         KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-        // lower / inner row
-        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______,       _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
-        // thumb row
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        KC_LCBR, _______, _______, KC_RCBR,
+        KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ),
 
     // macOS: normal typing and OS switching.
     [LAYER_MAC_BASE] = LAYOUT(
-        // number row
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_ESC,
-        // QWERTY row
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        // home row
-        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        // lower / inner row
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_LBRC, QK_CAPS_WORD_TOGGLE, TO_WIN, KC_RBRC, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
-        // thumb row
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
+        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
+        KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        DE_UDIA, QK_CAPS_WORD_TOGGLE, TO_WIN, DE_PLUS,
+        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RSFT,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       MAC_NAVNUM, MAC_SPEC, KC_LGUI, KC_LALT, KC_SPC,  KC_SPC,  KC_RALT, KC_RGUI, KC_APP,  KC_ENT
     ),
 
     // macOS: navigation, editing, numpad, and media.
     [LAYER_MAC_NAVNUM] = LAYOUT(
-        // number row
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-        // QWERTY row
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_TAB,  KC_DEL,                         KC_KP_MINUS, KC_1, KC_2, KC_3, KC_KP_COMMA, KC_KP_SLASH,
-        // home row
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
         KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_LCTL, KC_LSFT,                         KC_KP_PLUS,  KC_4, KC_5, KC_6, KC_KP_DOT,   KC_KP_ASTERISK,
-        // lower / inner row
-        _______, _______, _______, _______, _______, _______, _______, _______,       KC_0, KC_7, KC_8, KC_9, KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
-        // thumb row
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        _______, _______, _______, _______, _______, _______,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        _______, _______, _______, _______,
+        KC_0,    KC_7,    KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ),
 
     // macOS: symbols and shifted punctuation.
     [LAYER_MAC_SPEC] = LAYOUT(
-        // number row
+        // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-        // QWERTY row
+        // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-        // home row
+        // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
         KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
-        // lower / inner row
-        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC, KC_LCBR, _______,       _______, KC_RCBR, KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
-        // thumb row
+        // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
+        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC,
+        // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
+        KC_LCBR, _______, _______, KC_RCBR,
+        KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
+        // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ),
 };
