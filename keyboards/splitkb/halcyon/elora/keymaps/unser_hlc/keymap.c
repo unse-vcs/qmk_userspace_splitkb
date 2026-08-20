@@ -43,21 +43,21 @@ enum layer_names {
 // LAYOUT macro follows the same left-to-right order for each physical row.
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    // Windows: normal typing and OS switching.
+    // Windows: German base layout.
     [LAYER_WIN_BASE] = LAYOUT(
         // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
         // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
         // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
-        KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
         // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
-        KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
+        KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
-        DE_UDIA, QK_CAPS_WORD_TOGGLE, TO_MAC, DE_PLUS,
-        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RSFT,
+        KC_VOLD, KC_VOLU, KC_VOLD, KC_VOLU,
+        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
-                                      WIN_NAVNUM, WIN_SPEC, KC_LGUI, KC_LALT, KC_SPC,  KC_SPC,  KC_RALT, KC_RGUI, KC_APP,  KC_ENT
+                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  KC_ENT,  KC_ENT,  KC_SPC,  KC_BSPC, KC_RALT, KC_RGUI
     ),
 
     // Windows: navigation, editing, numpad, and media.
@@ -94,21 +94,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     ),
 
-    // macOS: normal typing and OS switching.
+    // macOS: German base layout.
     [LAYER_MAC_BASE] = LAYOUT(
         // QMK groups 1-2: matrix row 0 left, then matrix row 5 right
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
         // QMK groups 3-4: matrix row 1 left, then matrix row 6 right
         KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
         // QMK groups 5-6: matrix row 2 left, then matrix row 7 right
-        KC_LCTL, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
         // QMK group 7: [3,6]...[3,1], [4,3], [3,0], [8,0], [9,3], [8,1]...[8,6]
-        KC_LSFT, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
+        KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // QMK group 7 continued: [4,3], [3,0], [8,0], [9,3]
-        DE_UDIA, QK_CAPS_WORD_TOGGLE, TO_WIN, DE_PLUS,
-        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RSFT,
+        KC_VOLD, KC_VOLU, KC_VOLD, KC_VOLU,
+        DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // QMK group 8: row 4 columns 4,2,1,5,0; then row 9 columns 0,5,1,2,4
-                                      MAC_NAVNUM, MAC_SPEC, KC_LGUI, KC_LALT, KC_SPC,  KC_SPC,  KC_RALT, KC_RGUI, KC_APP,  KC_ENT
+                                      KC_LCMD, KC_LOPT, KC_BSPC, KC_SPC,  KC_ENT,  KC_ENT,  KC_SPC,  KC_BSPC, KC_ROPT, KC_RCMD
     ),
 
     // macOS: navigation, editing, numpad, and media.
