@@ -68,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Second row: left six keys | right six keys
         KC_PSCR, XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_PGUP,                         KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_MINUS, KC_KP_SLASH, KC_F12,
         // Home row (third row): left six keys | right six keys
-        _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,                         KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_PLUS, KC_KP_ASTERISK, XXXXXXX,
+        _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,                         KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_PLUS, KC_KP_ASTERISK, _______,
         // Fourth row: left six regular keys
         _______, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
@@ -86,13 +86,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Second row: left six keys | right six keys
         _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, XXXXXXX,
         // Home row (third row): left six keys | right six keys
-        _______, DE_EXLM, DE_AT,   DE_DQUO, DE_PERC, DE_AMPR,                         DE_ACUT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
+        _______, DE_EXLM, DE_AT,   DE_DQUO, DE_PERC, DE_AMPR,                         DE_QUOT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
         _______, XXXXXXX, XXXXXXX, LCTL(KC_INS), LSFT(KC_INS), KC_INS,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         // Fourth row: right six regular keys
-        DE_QUOT, DE_SLSH, DE_BSLS, DE_HASH, XXXXXXX, _______,
+        DE_ACUT, DE_SLSH, DE_BSLS, DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
