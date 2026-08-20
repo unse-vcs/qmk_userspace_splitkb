@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Second row: left six keys | right six keys
         KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    DE_UDIA,
         // Home row (third row): left six keys | right six keys
-        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, KC_RSFT,
         // Fourth row: left six regular keys
         KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
@@ -84,15 +84,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
-        _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+        _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, XXXXXXX,
         // Home row (third row): left six keys | right six keys
-        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
+        _______, DE_EXLM, DE_AT,   DE_DQUO, DE_PERC, DE_AMPR,                         DE_ACUT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
-        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC,
+        _______, XXXXXXX, XXXXXXX, LCTL(KC_INS), LSFT(KC_INS), KC_INS,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        KC_LCBR, _______, _______, KC_RCBR,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         // Fourth row: right six regular keys
-        KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
+        DE_SLSH, DE_BSLS, XXXXXXX, XXXXXXX, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
