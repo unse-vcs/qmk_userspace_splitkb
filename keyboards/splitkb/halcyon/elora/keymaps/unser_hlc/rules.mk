@@ -1,7 +1,3 @@
-VIA_ENABLE = yes
-VIAL_ENABLE = yes
-VIALRGB_ENABLE = yes
-
 # Native keymap behavior follows FU's feature-oriented configuration.
 ENCODER_ENABLE = yes
 ENCODER_MAP_ENABLE = no
