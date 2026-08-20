@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         KC_KP_1, KC_KP_2, KC_KP_3, _______, KC_KP_COMMA, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, KC_KP_0, _______, _______
+                                      _______, _______, _______, _______, _______, _______, KC_KP_0, _______, _______, _______
     ),
 
     // Windows: symbols and shifted punctuation.
