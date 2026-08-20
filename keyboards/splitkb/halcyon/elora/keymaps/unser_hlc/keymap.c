@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        KC_VOLD, KC_VOLU, KC_VOLD, KC_VOLU,
+        QK_RGB_MATRIX_MODE_PREVIOUS, QK_RGB_MATRIX_MODE_NEXT, QK_RGB_MATRIX_TOGGLE, KC_VOLU,
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
