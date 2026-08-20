@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
         // Second row: left six keys | right six keys
-        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
+        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    DE_UDIA,
         // Home row (third row): left six keys | right six keys
         KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
         // Fourth row: left six regular keys
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  KC_ENT,  KC_ENT,  KC_SPC,  KC_BSPC, KC_RALT, KC_RGUI
+                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  KC_ENT,  KC_ENT,  KC_SPC,  KC_BSPC, KC_LALT, KC_RGUI
     ),
 
     // Windows: navigation, editing, numpad, and media.
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                            KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DE_SS,
         // Second row: left six keys | right six keys
-        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    KC_BSPC,
+        KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    DE_UDIA,
         // Home row (third row): left six keys | right six keys
         KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
         // Fourth row: left six regular keys
