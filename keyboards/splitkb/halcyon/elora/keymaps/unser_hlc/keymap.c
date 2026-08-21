@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        QK_RGB_MATRIX_TOGGLE, QK_RGB_MATRIX_MODE_NEXT, XXXXXXX, XXXXXXX,
+        QK_RGB_MATRIX_TOGGLE, QK_RGB_MATRIX_MODE_NEXT, KC_BTN1, KC_BTN2,
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         _______, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        KC_APP,   KC_NUM,  XXXXXXX, XXXXXXX,
+        KC_APP,   KC_NUM,  _______, _______,
         // Fourth row: right six regular keys
         KC_KP_1, KC_KP_2, KC_KP_3, _______, KC_KP_COMMA, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: left six regular keys
         _______, XXXXXXX, XXXXXXX, LCTL(KC_INS), LSFT(KC_INS), KC_INS,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, _______, _______,
         // Fourth row: right six regular keys
         DE_ACUT, DE_SLSH, DE_BSLS, DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
