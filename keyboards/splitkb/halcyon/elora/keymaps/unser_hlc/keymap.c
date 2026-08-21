@@ -104,11 +104,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Second row: left six keys | right six keys
         KC_TAB,  DE_Q,    DE_W,    DE_E,    DE_R,    DE_T,                            DE_Z,    DE_U,    DE_I,    DE_O,    DE_P,    DE_UDIA,
         // Home row (third row): left six keys | right six keys
-        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, DE_ADIA,
+        KC_LSFT, DE_A,    DE_S,    DE_D,    DE_F,    DE_G,                            DE_H,    DE_J,    DE_K,    DE_L,    DE_ODIA, KC_RSFT,
         // Fourth row: left six regular keys
         KC_LCTL, DE_Y,    DE_X,    DE_C,    DE_V,    DE_B,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        KC_VOLD, KC_VOLU, KC_VOLD, KC_VOLU,
+        QK_RGB_MATRIX_TOGGLE, QK_RGB_MATRIX_MODE_NEXT, KC_BTN1, KC_BTN2,
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Second row: left six keys | right six keys
         _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
         // Home row (third row): left six keys | right six keys
-        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PLUS,
+        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, DE_ADIA,
         // Fourth row: left six regular keys
         KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
