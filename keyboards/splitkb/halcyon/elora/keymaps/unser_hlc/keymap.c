@@ -166,11 +166,21 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     uint8_t mods = get_mods() | get_oneshot_mods();
     switch (get_highest_layer(layer_state | default_layer_state)) {
         case LAYER_WIN_BASE:
+            if (mods & MOD_MASK_SHIFT) {
+                tap_code(clockwise ? QK_MOUSE_WHEEL_RIGHT : QK_MOUSE_WHEEL_LEFT);
+            } else {
+                tap_code(clockwise ? QK_MOUSE_WHEEL_DOWN : QK_MOUSE_WHEEL_UP);
+            }
+            break;
+
+        case LAYER_WIN_NAVNUM:
+            tap_code(clockwise ? KC_VOLU : KC_VOLD);
+            break;
+
         case LAYER_MAC_BASE:
             tap_code(clockwise ? KC_VOLU : KC_VOLD);
             break;
 
-        case LAYER_WIN_NAVNUM:
         case LAYER_WIN_SPEC:
         case LAYER_MAC_NAVNUM:
         case LAYER_MAC_SPEC:
