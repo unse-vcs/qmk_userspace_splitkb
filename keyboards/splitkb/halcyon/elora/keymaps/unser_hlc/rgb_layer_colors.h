@@ -27,9 +27,9 @@ static inline layer_color_t rgb_layer_color(bool is_mac_layer, bool is_top_row, 
     uint8_t b = 0xFF;
 
     if (is_top_row) {
-        r = is_mac_layer ? 0x37 : 0x3E;
-        g = 0xB0;
-        b = is_mac_layer ? 0x4F : 0xF0;
+        r = 0x00;
+        g = is_mac_layer ? 0xFF : 0x00;
+        b = is_mac_layer ? 0x00 : 0xFF;
     }
 
     return (layer_color_t){

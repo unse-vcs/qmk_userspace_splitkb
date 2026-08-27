@@ -46,10 +46,10 @@ int main(void) {
     expect_true("underglow at the same height is excluded", !rgb_layer_is_top_row(0x02, 2));
     expect_true("lower keylight is excluded", !rgb_layer_is_top_row(0x04, 10));
 
-    expect_color("Windows top row is marine blue", rgb_layer_color(false, true, 255), 0x3E, 0xB0, 0xF0);
-    expect_color("macOS top row is viper green", rgb_layer_color(true, true, 255), 0x37, 0xB0, 0x4F);
+    expect_color("Windows top row is strong blue", rgb_layer_color(false, true, 255), 0x00, 0x00, 0xFF);
+    expect_color("macOS top row is strong green", rgb_layer_color(true, true, 255), 0x00, 0xFF, 0x00);
     expect_color("other LEDs are white", rgb_layer_color(false, false, 255), 0xFF, 0xFF, 0xFF);
-    expect_color("brightness scales the palette", rgb_layer_color(false, true, 128), 0x1F, 0x58, 0x78);
+    expect_color("brightness scales the palette", rgb_layer_color(false, true, 128), 0x00, 0x00, 0x80);
 
     if (failures != 0) {
         fprintf(stderr, "%d RGB layer-color test(s) failed\n", failures);
