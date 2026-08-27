@@ -1,18 +1,10 @@
 #include QMK_KEYBOARD_H
 #include "keymap_german.h"
+#include "layers.h"
 
 // -----------------------------------------------------------------------------
 // Layers and aliases
 // -----------------------------------------------------------------------------
-
-enum layer_names {
-    LAYER_WIN_BASE,
-    LAYER_WIN_NAVNUM,
-    LAYER_WIN_SPEC,
-    LAYER_MAC_BASE,
-    LAYER_MAC_NAVNUM,
-    LAYER_MAC_SPEC,
-};
 
 #define WIN_NAVNUM MO(LAYER_WIN_NAVNUM)
 #define WIN_SPEC   MO(LAYER_WIN_SPEC)
@@ -20,6 +12,10 @@ enum layer_names {
 #define MAC_SPEC   MO(LAYER_MAC_SPEC)
 #define TO_WIN     DF(LAYER_WIN_BASE)
 #define TO_MAC     DF(LAYER_MAC_BASE)
+
+enum custom_keycodes {
+    RGB_DFLT = SAFE_RANGE,
+};
 
 // -----------------------------------------------------------------------------
 // Physical Elora map
@@ -82,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Windows: symbols and shifted punctuation.
     [LAYER_WIN_SPEC] = LAYOUT(
         // First row: left six keys | right six keys
-        TO_MAC,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
+        TO_MAC,  _______, RGB_DFLT, RM_PREV, RM_NEXT, RM_TOGG,                        _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
         _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, DE_ASTR,
         // Home row (third row): left six keys | right six keys
@@ -138,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //      Reverse the German aliases here so the resulting characters remain ^ ° < >.
     [LAYER_MAC_SPEC] = LAYOUT(
         // First row: left six keys | right six keys
-        TO_WIN,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
+        TO_WIN,  _______, RGB_DFLT, RM_PREV, RM_NEXT, RM_TOGG,                        _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
         _______, DE_LABK, DE_RABK,  DE_CIRC, DE_DEG, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), DE_ASTR,
         // Home row (third row): left six keys | right six keys
@@ -154,6 +150,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 // clang-format on
+
+// -----------------------------------------------------------------------------
+// RGB matrix behaviour
+// -----------------------------------------------------------------------------
+
+void keyboard_post_init_user(void) {
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_CUSTOM_layer_colors);
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (keycode == RGB_DFLT) {
+        if (record->event.pressed) {
+            rgb_matrix_enable_noeeprom();
+            rgb_matrix_mode_noeeprom(RGB_MATRIX_CUSTOM_layer_colors);
+        }
+        return false;
+    }
+
+    return true;
+}
 
 // -----------------------------------------------------------------------------
 // Encoder behaviour
