@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Windows: symbols and shifted punctuation.
     [LAYER_WIN_SPEC] = LAYOUT(
         // First row: left six keys | right six keys
-        TO_MAC,  _______, _______, QK_RGB_MATRIX_MODE_PREVIOUS, QK_RGB_MATRIX_MODE_NEXT, QK_RGB_MATRIX_TOGGLE,                         _______, _______, _______, _______, _______, _______,
+        TO_MAC,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
         _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, XXXXXXX,
         // Home row (third row): left six keys | right six keys
@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // macOS: symbols and shifted punctuation.
     [LAYER_MAC_SPEC] = LAYOUT(
         // First row: left six keys | right six keys
-        TO_WIN, _______, _______, QK_RGB_MATRIX_MODE_PREVIOUS, QK_RGB_MATRIX_MODE_NEXT, QK_RGB_MATRIX_TOGGLE,                         _______, _______, _______, _______, _______, _______,
+        TO_WIN,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
         _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
         // Home row (third row): left six keys | right six keys
