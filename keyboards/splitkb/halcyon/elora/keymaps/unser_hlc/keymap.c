@@ -138,15 +138,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         TO_WIN,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
-        _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,                            KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+        _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), XXXXXXX,
         // Home row (third row): left six keys | right six keys
-        KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                         KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, DE_ADIA,
+        _______, DE_EXLM, LALT(DE_L), DE_DQUO, DE_PERC, DE_AMPR,                      DE_QUOT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
-        KC_PIPE, KC_BSLS, KC_COLN, KC_SCLN, KC_MINS, KC_LBRC,
+        _______, XXXXXXX, XXXXXXX, LGUI(DE_C), LGUI(DE_V), XXXXXXX,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        KC_LCBR, _______, _______, KC_RCBR,
+        XXXXXXX, XXXXXXX, _______, _______,
         // Fourth row: right six regular keys
-        KC_RBRC, KC_UNDS, KC_COMM, KC_DOT, KC_SLSH, KC_QUES,
+        DE_ACUT, DE_SLSH, LSA(KC_7), DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
                                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
     ),
