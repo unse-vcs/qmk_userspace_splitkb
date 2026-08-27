@@ -118,19 +118,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // macOS: navigation, editing, numpad, and media.
     [LAYER_MAC_NAVNUM] = LAYOUT(
         // First row: left six keys | right six keys
-        _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                            KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         // Second row: left six keys | right six keys
-        KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_TAB,  KC_DEL,                         KC_KP_MINUS, KC_1, KC_2, KC_3, KC_KP_COMMA, KC_KP_SLASH,
+        SGUI(KC_4), XXXXXXX, LGUI(KC_LEFT), KC_UP,   LGUI(KC_RGHT), KC_PGUP,          KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_MINUS, KC_KP_SLASH, KC_F12,
         // Home row (third row): left six keys | right six keys
-        KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_LCTL, KC_LSFT,                         KC_KP_PLUS,  KC_4, KC_5, KC_6, KC_KP_DOT,   KC_KP_ASTERISK,
+        _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,                         KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_PLUS, KC_KP_ASTERISK, _______,
         // Fourth row: left six regular keys
-        _______, _______, _______, _______, _______, _______,
+        _______, KC_MPRV, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY,
         // Fourth row: left two upper-thumb keys | right two upper-thumb keys
-        _______, _______, KC_0,    KC_7,
+        KC_BTN2, KC_NUM,  _______, _______,
         // Fourth row: right six regular keys
-        KC_8,    KC_9,    KC_KP_EQUAL, KC_MPRV, KC_MPLY, KC_MNXT,
+        KC_KP_1, KC_KP_2, KC_KP_3, _______, KC_KP_COMMA, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                                      _______, _______, _______, _______, _______, _______, KC_KP_0, _______, _______, _______
     ),
 
     // macOS: symbols and shifted punctuation.
@@ -174,6 +174,7 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             break;
 
         case LAYER_WIN_NAVNUM:
+        case LAYER_MAC_NAVNUM:
             tap_code(clockwise ? KC_VOLU : KC_VOLD);
             break;
 
@@ -182,7 +183,6 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
             break;
 
         case LAYER_WIN_SPEC:
-        case LAYER_MAC_NAVNUM:
         case LAYER_MAC_SPEC:
             if (mods & MOD_MASK_SHIFT) {
                 tap_code(clockwise ? KC_WH_R : KC_WH_L);
