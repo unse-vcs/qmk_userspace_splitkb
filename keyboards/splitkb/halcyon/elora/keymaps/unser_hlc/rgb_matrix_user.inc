@@ -1,9 +1,9 @@
-#include "layers.h"
-#include "rgb_layer_colors.h"
-
 RGB_MATRIX_EFFECT(layer_colors)
 
 #ifdef RGB_MATRIX_CUSTOM_EFFECT_IMPLS
+
+#    include "layers.h"
+#    include "rgb_layer_colors.h"
 
 static bool layer_colors(effect_params_t *params) {
     RGB_MATRIX_USE_LIMITS(led_min, led_max);
