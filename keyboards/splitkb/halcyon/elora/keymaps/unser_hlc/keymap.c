@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      KC_LGUI, KC_LALT, KC_BSPC, KC_SPC,  LT(LAYER_WIN_NAVNUM, KC_ENT),  TT(LAYER_WIN_NAVNUM),  TT(LAYER_WIN_SPEC),  KC_BSPC, KC_LALT, KC_RGUI
+                                      KC_LALT, KC_LGUI, KC_BSPC, KC_SPC,  LT(LAYER_WIN_NAVNUM, KC_ENT),  TT(LAYER_WIN_NAVNUM),  TT(LAYER_WIN_SPEC),  KC_BSPC, KC_LGUI, KC_LALT
     ),
 
     // Windows: navigation, editing, numpad, and media.
@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         DE_N,    DE_M,    DE_COMM, DE_DOT, DE_MINS, KC_RCTL,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                       KC_LCMD, KC_LOPT, KC_BSPC, KC_SPC,  LT(LAYER_MAC_NAVNUM, KC_ENT),  TT(LAYER_MAC_NAVNUM),  TT(LAYER_MAC_SPEC),  KC_BSPC, KC_ROPT, KC_RCMD
+                                       KC_LOPT, KC_LCMD, KC_BSPC, KC_SPC,  LT(LAYER_MAC_NAVNUM, KC_ENT),  TT(LAYER_MAC_NAVNUM),  TT(LAYER_MAC_SPEC),  KC_BSPC, KC_LCMD, KC_LOPT
     ),
 
     // macOS: navigation, editing, numpad, and media.
