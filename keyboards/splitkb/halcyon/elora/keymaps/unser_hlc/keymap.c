@@ -134,11 +134,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // macOS: symbols and shifted punctuation.
+    //      macOS swaps the ISO KC_GRV and KC_NUBS positions for this keyboard.
+    //      Reverse the German aliases here so the resulting characters remain ^ ° < >.
     [LAYER_MAC_SPEC] = LAYOUT(
         // First row: left six keys | right six keys
         TO_WIN,  _______, _______, RM_PREV, RM_NEXT, RM_TOGG,                         _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
-        _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), DE_ASTR,
+        _______, DE_LABK, DE_RABK,  DE_CIRC, DE_DEG, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), DE_ASTR,
         // Home row (third row): left six keys | right six keys
         _______, DE_EXLM, LALT(DE_L), DE_DQUO, DE_PERC, DE_AMPR,                      DE_QUOT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
