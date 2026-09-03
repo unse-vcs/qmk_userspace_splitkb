@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         DE_ACUT, DE_SLSH, DE_BSLS, DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                                      _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______, _______
     ),
 
     // macOS: German base layout.
@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // Fourth row: right six regular keys
         DE_ACUT, DE_SLSH, LSA(KC_7), DE_HASH, XXXXXXX, _______,
         // Fifth row: left five lower-thumb keys | right five lower-thumb keys
-                                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+                                      _______, _______, _______, _______, _______, XXXXXXX, _______, _______, _______, _______
     ),
 };
 // clang-format on
