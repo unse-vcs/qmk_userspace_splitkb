@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                            KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
         // Second row: left six keys | right six keys
-        SGUI(KC_4), XXXXXXX, LGUI(KC_LEFT), KC_UP,   LGUI(KC_RGHT), KC_PGUP,          KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_MINUS, KC_KP_SLASH, KC_F12,
+        CSGUI(KC_4), XXXXXXX, LGUI(KC_LEFT), KC_UP,   LGUI(KC_RGHT), KC_PGUP,         KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_MINUS, KC_KP_SLASH, KC_F12,
         // Home row (third row): left six keys | right six keys
         _______, XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN,                         KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_PLUS, KC_KP_ASTERISK, _______,
         // Fourth row: left six regular keys
