@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         TO_MAC,  _______, RGB_DFLT, RM_PREV, RM_NEXT, RM_TOGG,                        _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
-        _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, DE_ASTR,
+        _______, DE_CIRC, DE_DEG,  DE_LABK, DE_RABK, DE_PIPE,                         DE_TILD, DE_LBRC, DE_RBRC, DE_LCBR, DE_RCBR, DE_PLUS,
         // Home row (third row): left six keys | right six keys
         _______, DE_EXLM, DE_DQUO,   DE_AT, DE_PERC, DE_AMPR,                         DE_QUOT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
@@ -137,7 +137,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // First row: left six keys | right six keys
         TO_WIN,  _______, RGB_DFLT, RM_PREV, RM_NEXT, RM_TOGG,                        _______, _______, _______, _______, _______, _______,
         // Second row: left six keys | right six keys
-        _______, DE_LABK, DE_RABK,  DE_CIRC, DE_DEG, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), DE_ASTR,
+        _______, DE_LABK, DE_RABK,  DE_CIRC, DE_DEG, LALT(KC_7),                      LALT(DE_N), LALT(KC_5), LALT(KC_6), LALT(KC_8), LALT(KC_9), DE_PLUS,
         // Home row (third row): left six keys | right six keys
         _______, DE_EXLM, DE_DQUO, LALT(DE_L), DE_PERC, DE_AMPR,                      DE_QUOT, DE_LPRN, DE_RPRN, DE_EQL,  DE_QUES, DE_ADIA,
         // Fourth row: left six regular keys
